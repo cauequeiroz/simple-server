@@ -1,2 +1,2 @@
 # Simple Server
-A simple node server to learn backend/devops stuff.
+A simple server to learn backend/devops stuff.

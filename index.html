@@ -7,11 +7,16 @@
 </head>
 <body>
   <h1>Hello world!</h1>
-  <p>by Caue Queiroz @ v1.0.5</p>
+  <p>by Caue Queiroz @ v1.0.6</p>
+
+  <p id="websocket-data"></p>
 
   <script>
     const ws = new WebSocket(`${window.location.protocol === 'https:' ? 'wss' : 'ws'}//${window.location.host}`);
-    ws.onmessage = event => console.log(`[WEBSOCKET] ${event.data}`);
+    ws.onmessage = event => {
+      console.log(`[WEBSOCKET] ${event.data}`)
+      document.querySelector('#websocket-data').innerHTML = event.data;
+    };
   </script>
 </body>
 </html>

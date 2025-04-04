@@ -2,3 +2,4 @@
 
 cd /var/www/simple-server/
 git pull origin main --ff-only
+pnpm i

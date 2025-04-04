@@ -1,4 +1,4 @@
 #! /usr/bin/bash
 
-cd /var/www/simple-server
-git pull origin main
+cd /var/www/simple-server/
+git pull origin main --ff-only

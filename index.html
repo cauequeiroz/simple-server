@@ -8,5 +8,10 @@
 <body>
   <h1>Hello world!</h1>
   <p>by Caue Queiroz @ v1.0.4</p>
+
+  <script>
+    const ws = new WebSocket(`${window.location.protocol === 'https:' ? 'wss' : 'ws'}//${window.location.host}`);
+    ws.onmessage = event => console.log(`[WEBSOCKET] ${event.data}`);
+  </script>
 </body>
 </html>

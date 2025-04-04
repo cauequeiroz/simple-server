@@ -1,10 +1,11 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
+const server = require('http').createServer();
 
-const server = http.createServer((req, res) => {
-	res.writeHead(200, { 'content-type':'text/html' });
-	fs.createReadStream('index.html').pipe(res);
+const app = express();
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: __dirname });
 });
 
-server.listen(3000);
-console.log('Server started on port 3000');
+server.on('request', app);
+server.listen(3000, () => console.log('Server running on port 3000.'));
